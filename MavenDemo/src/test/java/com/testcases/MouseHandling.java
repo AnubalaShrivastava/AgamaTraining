@@ -30,6 +30,9 @@ public class MouseHandling {
 		Thread.sleep(1000);
 		action.moveToElement(qualification).perform();
 		action.moveToElement(languages).click().build().perform();
+		driver.quit();
+		
+		
 	}
 		 
 	
