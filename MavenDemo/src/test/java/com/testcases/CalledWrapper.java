@@ -11,6 +11,7 @@ public class CalledWrapper {
 		  wm.clickbyxpath("//*[@id=\'btnLogin\']");
 		  wm.takesnap("src/test/resources/ScreenShot/file1.png");
 		  wm.closeapp();
+		  
 			}
 
 }

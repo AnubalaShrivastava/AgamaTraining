@@ -2,10 +2,12 @@ package com.testcases;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -58,6 +60,26 @@ driver.findElement(By.id(val)).sendKeys(name);
 	    Select month=new Select(driver.findElement(By.id("month")));
 	    month.selectByVisibleText(text);
 	}
+	public void enterbyname(String val3, String name3) {
+		driver.findElement(By.name(val3)).sendKeys(name3);
+	}
+	public void enterkeyusingxpath(String val4) {
+		driver.findElement(By.xpath(val4)).sendKeys(Keys.ENTER);
+		
+	}
+	public void windowhandling() throws InterruptedException {
+        Set<String>winhandles=driver.getWindowHandles();//all the windows
+		System.out.println("the number of window are:"+winhandles.size());
+		for(String winhandle:winhandles) {
+			           driver.switchTo().window(winhandle);
+			     		
+			}
+		String title=driver.getTitle();
+		System.out.println("the page title is"+ title);
+		
+	}
+	
+
 		
 	}
 

@@ -1,5 +1,7 @@
 package com.testcases;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +15,7 @@ public class FrameHandling {
 				WebDriverManager.chromedriver().setup();
 				WebDriver driver = new ChromeDriver();
 				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 				driver.get("https://jqueryui.com/draggable/");
 				
 			    driver.switchTo().frame(driver.findElement(By.className("demo-frame")));

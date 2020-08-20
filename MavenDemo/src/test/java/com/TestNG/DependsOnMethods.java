@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DependsOnMethods {
+	//private static final boolean True = true;
+	//private static final boolean False = false;
 	@Test(description="Login OrangeHRM")
 	public void login() {
 		System.out.println("Test Case login");
@@ -14,7 +16,7 @@ public class DependsOnMethods {
 	Assert.assertEquals("xyz", "abc");
 	
 	}
-	@Test(dependsOnMethods="search")
+	@Test(dependsOnMethods="search",alwaysRun=true)
 	public void logout() {
 	System.out.println("Test Case logout");
 	}	
